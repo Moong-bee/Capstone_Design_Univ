@@ -1,7 +1,11 @@
 <h1>[웹서버 프로그래밍 - PHP Programming]</h1>
 
 
-** 개발 도구 : PHPstorm **
+** 개발환경 **
+1. OS : Windows 10 pro
+2. IDE : PHPStorm
+3. 기타 : php 5.6, Mysql 5
+4. API : 일단 다음 api
 
 
 2018-04-05 06:30 pm : 프로젝트 생성 <br>
@@ -20,12 +24,11 @@
 
 ![폴더 이미지](/Readme/capture.JPG "폴더 이미지")
 
-1.database : 데이터베이스관련 php, js 파일.<br>
-2.html : 확장자가 html 인 파일. <br>
-3.javascript : js 관련 파일. <br>
-4.php : php 관련 파일. <br>
-5.readme : 그냥 있는 폴더 삭제 x <br>
-6.resource : 자원파일, img, txt, mp3, mp4 등 <br>
-7.stylesheet: css 파일 <br>
-
+1. database : 데이터베이스 관련 php, js 파일
+2. html : 확장자가 html 인 파일
+3. javascript : js 파일
+4. php : php 파일
+5. readme : Readme.md 작성을 위한 폴더
+6. resource : 자원 파일(ex. jpg, png, mp3, mp4 등등)
+7. stylesheet : css 파일
 
