@@ -26,6 +26,6 @@
 4.php : php 관련 파일. <br>
 5.readme : 그냥 있는 폴더 삭제 x <br>
 6.resource : 자원파일, img, txt, mp3, mp4 등 <br>
-
+7.stylesheet: css 파일 <br>
 
 
