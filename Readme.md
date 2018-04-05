@@ -3,7 +3,7 @@
 
 ** 개발환경 **
 1. OS : Windows 10 pro
-2. IDE : PHPStorm
+2. IDE : PHPStorm (https://www.jetbrains.com/phpstorm/) phpstorm 은 학교 이메일이 있을경우 무료로 이용가능.
 3. 기타 : php 5.6, Mysql 5
 4. API : 일단 다음 api
 
