@@ -22,7 +22,8 @@
 
 <h4> 폴더 정리 </h4>
 
-![폴더 이미지](/Readme/capture.JPG "폴더 이미지")
+![capture](https://user-images.githubusercontent.com/10570126/38460990-9654c7d2-3b00-11e8-989c-309e7e1fcf2c.JPG)
+
 
 1. database : 데이터베이스 관련 php, js 파일
 2. html : 확장자가 html 인 파일
