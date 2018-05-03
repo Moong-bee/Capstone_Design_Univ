@@ -2,17 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="424b68ef-bc66-4cb9-9f55-ab42d7bbe89e" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change beforePath="$PROJECT_DIR$/css/trip_go.css" afterPath="$PROJECT_DIR$/css/trip_go.css" />
-      <change beforePath="$PROJECT_DIR$/css/trip_go.min.css" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/html/register.html" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/index.php" afterPath="$PROJECT_DIR$/index.php" />
-      <change beforePath="$PROJECT_DIR$/javascript/test.js" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/js/trip_go.js" afterPath="$PROJECT_DIR$/js/trip_go.js" />
-      <change beforePath="$PROJECT_DIR$/js/trip_go.min.js" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/php/mem_print.php" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/php/test.php" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/stylesheet/home.css" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/Readme.md" afterPath="$PROJECT_DIR$/Readme.md" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -33,7 +23,7 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="header.php" pinned="false" current-in-tab="true">
+      <file leaf-file-name="header.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/header.php">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="475">
@@ -86,12 +76,12 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Readme.md" pinned="false" current-in-tab="false">
+      <file leaf-file-name="Readme.md" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/Readme.md">
           <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
             <state split_layout="SPLIT">
-              <first_editor relative-caret-position="665">
-                <caret line="35" column="0" lean-forward="false" selection-start-line="35" selection-start-column="0" selection-end-line="35" selection-end-column="0" />
+              <first_editor relative-caret-position="247">
+                <caret line="13" column="56" lean-forward="false" selection-start-line="13" selection-start-column="56" selection-end-line="13" selection-end-column="56" />
                 <folding />
               </first_editor>
               <second_editor />
@@ -135,7 +125,6 @@
         <option value="$PROJECT_DIR$/html/register.html" />
         <option value="$PROJECT_DIR$/php/mem_print.php" />
         <option value="$PROJECT_DIR$/stylesheet/home.css" />
-        <option value="$PROJECT_DIR$/Readme.md" />
         <option value="$PROJECT_DIR$/index.html" />
         <option value="$PROJECT_DIR$/js/trip_go.min.js" />
         <option value="$PROJECT_DIR$/css/trip_go.min.css" />
@@ -145,6 +134,7 @@
         <option value="$PROJECT_DIR$/member/login.php" />
         <option value="$PROJECT_DIR$/index.php" />
         <option value="$PROJECT_DIR$/header.php" />
+        <option value="$PROJECT_DIR$/Readme.md" />
       </list>
     </option>
   </component>
@@ -287,12 +277,12 @@
       <workItem from="1524543299930" duration="174000" />
       <workItem from="1525235913190" duration="659000" />
       <workItem from="1525331787822" duration="15000" />
-      <workItem from="1525332537024" duration="2946000" />
+      <workItem from="1525332537024" duration="3035000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="22144000" />
+    <option name="totallyTimeSpent" value="22233000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
@@ -593,17 +583,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Readme.md">
-      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
-        <state split_layout="SPLIT">
-          <first_editor relative-caret-position="665">
-            <caret line="35" column="0" lean-forward="false" selection-start-line="35" selection-start-column="0" selection-end-line="35" selection-end-column="0" />
-            <folding />
-          </first_editor>
-          <second_editor />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$USER_HOME$/Downloads/sidebar (1)/bootstrap-sidebar/index4.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="489">
@@ -662,6 +641,17 @@
             <marker date="1525335667780" expanded="true" signature="1686:1797" ph="{...}" />
             <marker date="1525335667780" expanded="true" signature="1925:2022" ph="{...}" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Readme.md">
+      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+        <state split_layout="SPLIT">
+          <first_editor relative-caret-position="247">
+            <caret line="13" column="56" lean-forward="false" selection-start-line="13" selection-start-column="56" selection-end-line="13" selection-end-column="56" />
+            <folding />
+          </first_editor>
+          <second_editor />
         </state>
       </provider>
     </entry>
