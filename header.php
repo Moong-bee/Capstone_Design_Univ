@@ -1,23 +1,24 @@
-<nav class="navbar navbar-default">
-    <div class="container-fluid">
+<div class="row">
+    <nav class="col-md-12 navbar navbar-default" style="margin-bottom: 10px; margin-left: 15px;">
+        <div class="container-fluid">
 
-        <div class="navbar-header">
-            <button type="button" id="sidebarCollapse" class="btn btn-info navbar-btn">
-                <i class="glyphicon glyphicon-align-left"></i>
-                <span>Toggle Sidebar</span>
-            </button>
-        </div>
+            <div class="navbar-header">
+                <button type="button" id="sidebarCollapse" class="btn btn-info navbar-btn">
+                    <i class="glyphicon glyphicon-align-left"></i>
+                    <span>Toggle Sidebar</span>
+                </button>
+            </div>
 
-        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-            <ul class="nav navbar-nav navbar-right">
-                <?
-                if ($userID) {
-                    echo("<li><a href='#'>logout</a></li>");
-                } else {
-                    echo("
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <ul class="nav navbar-nav navbar-right">
+                    <?
+                    if ($userID) {
+                        echo("<li><a href='#'>logout</a></li>");
+                    } else {
+                        echo("
                     <li>
-                        <a href='javascript:loginWithKakao()'>
-                            <img src=\"//mud-kage.kakao.com/14/dn/btqbjxsO6vP/KPiGpdnsubSq3a0PHEGUK1/o.jpg\" width=\"300\"/>
+                        <a id='custom-login-btn' href='javascript:loginWithKakao()'>
+                            <img src='./img/kakao_login_btn_small.png'/>
                         </a>
                         <script type='text/javascript'>
                           //<![CDATA[
@@ -46,9 +47,11 @@
                         </script>
                     </li>
                    ");
-                }
-                ?>
-            </ul>
+                    }
+                    ?>
+                </ul>
+            </div>
         </div>
-    </div>
-</nav>
+    </nav>
+
+</div>
