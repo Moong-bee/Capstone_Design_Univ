@@ -14,6 +14,7 @@
 2018-05-03 05:22 pm : 디자인 전면 수정 및 회원가입 변경(카카오 로그인으로 변경함.) <br>
 2018-05-08 02:24 pm : 메인화면 전면 수정
 2018-05-08 08:50 pm : 메인화면 ver2 제작
+2018-05-17 05:50 pm : index 변경 및 로그인 방법 변경
 
 이름 | 역할
 --------- | ----------
@@ -28,11 +29,8 @@
 ![capture](https://user-images.githubusercontent.com/10570126/38460990-9654c7d2-3b00-11e8-989c-309e7e1fcf2c.JPG)
 
 
-1. database : 데이터베이스 관련 php, js 파일
-2. html : 확장자가 html 인 파일
-3. javascript : js 파일
-4. php : php 파일
-5. readme : Readme.md 작성을 위한 폴더
-6. resource : 자원 파일(ex. jpg, png, mp3, mp4 등등)
-7. stylesheet : css 파일
+1. lib : 데이터베이스 관련 php, js 파일
+2. img : 이미지 파일
+3. js : js 파일
+4. member : 회원가입에 관련된 폴더 (각 기능마다 폴더 만들 예정)
 

@@ -1,12 +1,9 @@
 <div class="row">
-    <nav class="col-md-12 navbar navbar-default" style="margin-bottom: 10px; margin-left: 15px;">
+    <nav class="col-md-12 col-sm-12 col-xs-12 navbar navbar-default" style="margin-bottom: 10px; margin-left: 15px;">
         <div class="container-fluid">
 
             <div class="navbar-header">
-                <button type="button" id="sidebarCollapse" class="btn btn-info navbar-btn">
-                    <i class="glyphicon glyphicon-align-left"></i>
-                    <span>Toggle Sidebar</span>
-                </button>
+                <h1>Trip Go</h1>
             </div>
 
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">

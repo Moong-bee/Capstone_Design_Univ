@@ -24,6 +24,9 @@ a, a:hover, a:focus {
 }
 
 
+#map {
+    height: 100%;
+}
 
 .navbar {
     width : 99%;
