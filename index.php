@@ -1,39 +1,8 @@
 <?
-session_start();
-
-function CallAPI($method, $url, $data = false)
-{
-    $curl = curl_init();
-
-    switch ($method)
-    {
-        case "POST":
-            curl_setopt($curl, CURLOPT_POST, 1);
-
-            if ($data)
-                curl_setopt($curl, CURLOPT_POSTFIELDS, $data);
-            break;
-        case "PUT":
-            curl_setopt($curl, CURLOPT_PUT, 1);
-            break;
-        default:
-            if ($data)
-                $url = sprintf("%s?%s", $url, http_build_query($data));
-    }
-
-    // Optional Authentication:
-    curl_setopt($curl, CURLOPT_HTTPAUTH, CURLAUTH_BASIC);
-    curl_setopt($curl, CURLOPT_USERPWD, "username:password");
-
-    curl_setopt($curl, CURLOPT_URL, $url);
-    curl_setopt($curl, CURLOPT_RETURNTRANSFER, 1);
-
-    $result = curl_exec($curl);
-
-    curl_close($curl);
-
-    return $result;
+if (!isset($_SESSION)) {
+    session_start();
 }
+
 
 ?>
 <!DOCTYPE html>
@@ -67,8 +36,42 @@ function CallAPI($method, $url, $data = false)
         <a href="#" class="w3-bar-item w3-button"><i class="fa fa-search"></i></a>
         <a href="#" class="w3-bar-item w3-button"><i class="fa fa-envelope"></i></a>
         <a href="./maptest.php" class="w3-bar-item w3-button"><i class="fa fa-globe"></i></a>
-        <a id='custom-login-btn' class="w3-bar-item w3-button" href='javascript:loginWithKakao()'>
-            <i class="glyphicon glyphicon-log-in"></i>
+
+        <? if ($_SESSION['userid']) {
+            echo("<a id='custom-login-btn' class=\"w3-bar-item w3-button\" href='javascript:logoutWithKakao()'>
+            <i class=\"glyphicon glyphicon-log-in\"></i>
+            </a>
+            <script type='text/javascript'>
+            //<![CDATA[
+            // 사용할 앱의 JavaScript 키를 설정해 주세요.
+            Kakao.init('f4a9ba7d938d53e00486ce62adf80cff');
+
+            function loginWithKakao() {
+                // 로그인 창을 띄웁니다.
+                Kakao.Auth.login({
+                    success: function (authObj) {
+                        Kakao.API.request({
+                            url: '/v1/user/me',
+                            success: function (res) {
+                                alert(\"로그인은 브라우저 종료 또는 6시간 이후에 해제됩니다.\");
+                                var nickname = JSON.stringify(res.properties.nickname);
+                                location.href = './member/login.php?nickname=' + nickname;
+                            },
+                            fail: function (error) {
+                                alert(\"로그인을 하셔야 이용 가능합니다.\");
+                            }
+                        });
+                    },
+                    fail: function (err) {
+                        alert(JSON.stringify(err));
+                    }
+                });
+            };
+            //]]>
+        </script>");
+        } else {
+            echo("<a id='custom-login-btn' class=\"w3-bar-item w3-button\" href='javascript:loginWithKakao()'>
+            <i class=\"glyphicon glyphicon-log-in\"></i>
         </a>
         <script type='text/javascript'>
             //<![CDATA[
@@ -82,12 +85,12 @@ function CallAPI($method, $url, $data = false)
                         Kakao.API.request({
                             url: '/v1/user/me',
                             success: function (res) {
-                                alert(JSON.stringify(res.properties.nickname));
+                                alert(\"로그인은 브라우저 종료 또는 6시간 이후에 해제됩니다.\");
                                 var nickname = JSON.stringify(res.properties.nickname);
                                 location.href = './member/login.php?nickname=' + nickname;
                             },
                             fail: function (error) {
-                                alert(JSON.stringify(error));
+                                alert(\"로그인을 하셔야 이용 가능합니다.\");
                             }
                         });
                     },
@@ -97,22 +100,9 @@ function CallAPI($method, $url, $data = false)
                 });
             };
             //]]>
-        </script>
-        <a id='custom-login-btn' class="w3-bar-item w3-button" href='javascript:UserAction()'>
-            <i class="glyphicon glyphicon-log-in"></i>
-        </a>
-        <script type='text/javascript'>
-            function UserAction() {
-                var xhttp = new XMLHttpRequest();
-                xhttp.open("GET", "http://kauth.kakao.com/oauth/authorize?client_id={e446f350fd40cd40dd67806ea7fc02a5}&redirect_uri={http://localhost/Capstone-PHP}&response_type=code", true);
-                xhttp.setRequestHeader("Content-type", "application/json");
-                xhttp.send();
-                var response = xhttp.responseText;
-                alert(response);
-            }
-
-
-        </script>
+        </script>");
+        }
+        ?>
     </nav>
 
     <div class="w3-overlay w3-animate-opacity" onclick="closeRightMenu()" id="myOverlay"></div>
@@ -125,8 +115,8 @@ function CallAPI($method, $url, $data = false)
     <div class="w3-display-middle">
         <h1 class="w3-jumbo w3-animate-top">
             <?
-            if ($userid != "") {
-                echo "$userid";
+            if ($_SESSION['userid']) {
+                echo $_SESSION['userid'];
             } else {
                 echo "PLEASE WAIT";
             }
