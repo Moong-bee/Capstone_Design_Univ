@@ -38,45 +38,20 @@ if (session_status() == PHP_SESSION_NONE) {
         <a href="#" class="w3-bar-item w3-button"><i class="fa fa-envelope"></i></a>
         <a href="./maptest.php" class="w3-bar-item w3-button"><i class="fa fa-globe"></i></a>
         <?
-        if(!isset($_SESSION['userid'])) {
-            echo("<a id='custom-login-btn' class='w3-bar-item w3-button' href='javascript:loginWithKakao()'>
+        if (!isset($_SESSION['userid']))
+        {
+            echo("<a class='w3-bar-item w3-button' href='https://kauth.kakao.com/oauth/authorize?client_id=e446f350fd40cd40dd67806ea7fc02a5&redirect_uri=http://localhost:8080/Capstone-PHP/member/kakao_login.php&response_type=code'>
                         <i class='glyphicon glyphicon-log-in'></i>
                    </a>");
         }
         else {
-
-            echo("<a id='custom-login-btn' class='w3-bar-item w3-button' href='javascript:logoutWithKakao()'>
-                        <i class='glyphicon glyphicon-log-in'></i>
+            echo("<a class='w3-bar-item w3-button' href='./member/kakao_logout.php'>
+                        <i class='glyphicon glyphicon-log-out'></i>
                    </a>");
         }
-        ?>
-        <script type='text/javascript'>
-            //<![CDATA[
-            // 사용할 앱의 JavaScript 키를 설정해 주세요.
-            Kakao.init('f4a9ba7d938d53e00486ce62adf80cff');
 
-            function loginWithKakao() {
-                // 로그인 창을 띄웁니다.
-                Kakao.Auth.login({
-                    success: function (authObj) {
-                        Kakao.API.request({
-                            url: '/v1/user/me',
-                            success: function (res) {
-                                alert("로그인은 브라우저 종료 또는 6시간 이후에 해제됩니다.");
-                                var nickname = JSON.stringify(res.properties.nickname);
-                                location.href = './member/login.php?nickname=' + nickname;
-                            },
-                            fail: function (error) {
-                                alert("로그인을 하셔야 이용 가능합니다.");
-                            }
-                        });
-                    },
-                    fail: function (err) {
-                        alert(JSON.stringify(err));
-                    }
-                });
-            }
-        </script>
+        ?>
+
     </nav>
 
     <div class="w3-overlay w3-animate-opacity" onclick="closeRightMenu()" id="myOverlay"></div>
@@ -89,12 +64,11 @@ if (session_status() == PHP_SESSION_NONE) {
     <div class="w3-display-middle">
         <h1 class="w3-jumbo w3-animate-top">
             <? //
-                if(!isset($_SESSION['userid'])) {
-                    echo "PLEASE WAIT";
-                }
-                else {
-                    echo $_SESSION['userid'];
-                }
+            if (!isset($_SESSION['userid'])) {
+                echo "PLEASE WAIT";
+            } else {
+                echo $_SESSION['userid'];
+            }
             ?>
         </h1>
         <hr class="w3-border-grey" style="margin:auto;width:40%">

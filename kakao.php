@@ -5,7 +5,26 @@ define('GET', 'GET');
 define('POST', 'POST');
 define('DELETE', 'DELETE');
 
+define('GET', 'GET');
+define('POST', 'POST');
+define('DELETE', 'DELETE');
 
+
+///////////////////////////////////////////////////////////////////////////////
+
+// test code
+
+$helper = new Kakao_REST_API_Helper('[YOUR APP KEY]');
+$helper->set_admin_key('[YOUR ADMIN KEY]');
+
+$helper->test_user_management_api();
+//$helper->test_story_api();
+//$helper->test_talk_api();
+//$helper->test_push_notification_api();
+
+
+
+///////////////////////////////////////////////////////////////////////////////
 
 
 class User_Management_Path
@@ -147,10 +166,6 @@ class Kakao_REST_API_Helper
     // User Management
     ///////////////////////////////////////////////////////////////
 
-    public function login(){
-//        return this->request
-    }
-
     public function create_or_refresh_access_token($params) {
         return $this->request(User_Management_Path::$TOKEN, $params, POST);
     }
@@ -265,10 +280,10 @@ class Kakao_REST_API_Helper
     ///////////////////////////////////////////////////////////////
 
 
-//    private $REST_KEY = '[YOUR REST KEY]';  // 디벨로퍼스의 앱 설정에서 확인할 수 있습니다.
-//    private $REDIRECT_URI = '[YOUR REDIRECT URI]'; // 설정에 등록한 사이트 도메인 + redirect uri
-//    private $AUTHORIZATION_CODE = ''; // 동의를 한 후 발급되는 code
-//    private $REFRESH_TOKEN = '[YOUR REFRESH TOKEN]';
+    private $REST_KEY = '[YOUR REST KEY]';  // 디벨로퍼스의 앱 설정에서 확인할 수 있습니다.
+    private $REDIRECT_URI = '[YOUR REDIRECT URI]'; // 설정에 등록한 사이트 도메인 + redirect uri
+    private $AUTHORIZATION_CODE = ''; // 동의를 한 후 발급되는 code
+    private $REFRESH_TOKEN = '[YOUR REFRESH TOKEN]';
 
     /*
      * 유저 관리 API 테스트
@@ -295,19 +310,19 @@ class Kakao_REST_API_Helper
             echo $this->create_or_refresh_access_token($params);
         */
 
-        /*
+
             // 앱 사용자 정보 요청 (signup 후에 사용 가능)
             echo $this->me();
-        */
 
-        /*
+
+/*
             // 앱 연결
-            echo $this->signup();
-        */
+            echo $this->signup();*/
+
 
         /*
             // 앱 탈퇴 (unlink를 하면 access/refresh token이 삭제됩니다.)
-            echo $this->unlink();
+            //echo $this->unlink();
         */
 
         /*
@@ -330,8 +345,159 @@ class Kakao_REST_API_Helper
         */
 
     }
+
+    /*
+     * 카카오스토리 API 테스트
+     */
+    public function test_story_api()
+    {
+
+        /*
+            // 스토리 프로파일 요청
+            echo $this->story_profile();
+        */
+
+        /*
+            // 스토리 유저인지 확인
+            //echo $this->isstoryuser();
+        */
+
+        /*
+            $story_common_params = array();
+
+            // 글 포스팅이면 필수
+            $story_common_params['content'] = '더 나은 세상을 꿈꾸고 그것을 현실로 만드는 이를 위하여 카카오에서 앱 개발 플랫폼 서비스를 시작합니다.';
+
+            // 스토리 포스팅 공통 파라미터. 필요한 것만 선택하여 사용.
+            //$story_common_params['permission'] = 'A'; // A : 전체공개, F: 친구에게만 공개, M: 나만보기
+            //$story_common_params['enable_share'] = 'true'; // 공개 기능 허용 여부
+            //$story_common_params['android_exec_param'] = 'cafe_id=1234'; // 앱 이동시 추가 파라미터
+            //$story_common_params['ios_exec_param'] = 'cafe_id=1234';
+            //$story_common_params['android_market_param'] = 'cafe_id=1234';
+            //$story_common_params['ios_market_param'] = 'cafe_id=1234';
+
+            //$res = $helper->post_note($story_common_params);
+            //echo $res;
+            //$obj = json_decode($res);
+            //this->delete_mystory($obj->id); // 포스팅된 스토리 삭제.
+        */
+
+        /*
+            // 스토리 포스팅 공통 파라미터. 필요한 것만 선택하여 사용.
+            $story_common_params = array();
+            //$story_common_params['content'] = '더 나은 세상을 꿈꾸고 그것을 현실로 만드는 이를 위하여 카카오에서 앱 개발 플랫폼 서비스를 시작합니다.';
+            //$story_common_params['permission'] = 'A'; // A : 전체공개, F: 친구에게만 공개, M: 나만보기
+            //$story_common_params['enable_share'] = 'true'; // 공개 기능 허용 여부
+            //$story_common_params['android_exec_param'] = 'cafe_id=1234'; // 앱 이동시 추가 파라미터
+            //$story_common_params['ios_exec_param'] = 'cafe_id=1234';
+            //$story_common_params['android_market_param'] = 'cafe_id=1234';
+            //$story_common_params['ios_market_param'] = 'cafe_id=1234';
+
+            // 링크 포스팅
+            $test_site_url = 'https://developers.kakao.com';
+            $res = $this->post_link($test_site_url, $story_common_params);
+            echo $res;
+            $obj = json_decode($res);
+            //$this->delete_mystory($obj->id); // 포스팅된 테스트 스토리 삭제.
+        */
+
+        /*
+            // 스토리 포스팅 공통 파라미터. 필요한 것만 선택하여 사용.
+            $story_common_params = array();
+            $story_common_params['content'] = '더 나은 세상을 꿈꾸고 그것을 현실로 만드는 이를 위하여 카카오에서 앱 개발 플랫폼 서비스를 시작합니다.';
+            //$story_common_params['permission'] = 'A'; // A : 전체공개, F: 친구에게만 공개, M: 나만보기
+            //$story_common_params['enable_share'] = 'true'; // 공개 기능 허용 여부
+            //$story_common_params['android_exec_param'] = 'cafe_id=1234'; // 앱 이동시 추가 파라미터
+            //$story_common_params['ios_exec_param'] = 'cafe_id=1234';
+            //$story_common_params['android_market_param'] = 'cafe_id=1234';
+            //$story_common_params['ios_market_param'] = 'cafe_id=1234';
+
+            // 사진 포스팅 (최대 10개까지 가능)
+            $file_params = array(
+              'file[0]'=>"@/Users/tom/sample1.png",
+              'file[1]'=>"@/Users/tom/sample2.png"
+            );
+
+            // PHP 5 >= 5.5.0
+            $file_params = array(
+              'file[0]'=>new CurlFile('/Users/tom/sample1.png','image/png','sample1'),
+              'file[1]'=>new CurlFile('/Users/tom/sample2.png','image/png','sample2')
+            );
+
+            $res = $this->post_photo($file_params, $story_common_params);
+            echo $res;
+            $obj = json_decode($res);
+            $this->delete_mystory($obj->id); // 포스팅된 테스트 스토리 삭제.
+        */
+
+        /*
+            $test_mystory_id = '_cDLHO.GBNzGysmIZ9';
+
+            // 복수개의 내스토리 정보 요청
+            echo $this->get_mystories();
+
+            // 복수개의 내스토리 정보 요청 (특정 아이디 부터)
+            echo $this->get_mystories($test_mystory_id);
+
+            // 내스토리 정보 요청
+            echo $this->get_mystory($test_mystory_id); // 포스팅된 테스트 스토리 삭제.
+        */
+
+    }
+
+    /*
+     * 카카오톡 API 테스트
+     */
+    public function test_talk_api()
+    {
+        // 카카오톡 프로필 요청
+        //echo $this->talk_profile();
+    }
+
+    /*
+     * 푸시 알림 API 테스트
+     */
+    public function test_push_notification_api()
+    {
+        // 파라미터 설명
+        // @param uuid 사용자의 고유 ID. 1~(2^63 -1), 숫자만 가능
+        // @param push_type  gcm or apns
+        // @param push_token apns(64자) or GCM으로부터 발급받은 push token
+        // @param uuids 기기의 고유한 ID 리스트 (최대 100개까지 가능)
+
+        // 푸시 알림 관련 API를 테스트하시려면 admin key 지정해야 합니다.
+
+        /*
+            // 푸시 등록
+            $params = array(
+              "uuid" => "10000",
+              "push_type" => "gcm",
+              "push_token" => "xxxxxxxxxx",
+              "device_id" => ""
+            );
+            $this->register_push($params);
+        */
+
+        /*
+            // 푸시 토큰 조회
+            $param = array("uuid" => "10000");
+            $this->get_push_tokens($param);
+        */
+
+        /*
+            // 푸시 해제
+            $params = array(
+              "uuid" => "10000",
+              "push_type" => "gcm",
+              "push_token" => "xxxxxxxxxx"
+            );
+            $this->deregister_push($params);
+        */
+
+        /*
+            // 푸시 보내기
+            $param = array("uuids" => "[\"1\",\"2\", \"3\"]");
+            $this->sendPush($param);
+        */
+    }
 }
-
-
-?>
-
