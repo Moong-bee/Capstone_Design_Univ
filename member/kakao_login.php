@@ -57,7 +57,7 @@ $kakao_thumbnail_image = $return_data['properties']['thumbnail_image'];
 $_SESSION['userid'] = $kakao_id . $kakao_nickname;
 $_SESSION['access_token'] = $access_token;
 
-echo("<script>location.href = 'http://localhost:8080/Capstone-PHP/index2.php'</script>");
+echo("<script>location.href = 'http://localhost:8080/Capstone-PHP/index.php'</script>");
 
 ?>
 
