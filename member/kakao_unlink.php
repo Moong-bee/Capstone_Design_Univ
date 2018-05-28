@@ -1,5 +1,5 @@
 <?php
-$TOKEN_API_URL = "https://kapi.kakao.com/v1/user/logout";
+$TOKEN_API_URL = "https://kapi.kakao.com/v1/user/unlink";
 
 $header = array('Authorization: Bearer ' . $_SESSION['access_token']);
 $opts = array(
