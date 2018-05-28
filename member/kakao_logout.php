@@ -1,5 +1,5 @@
 <?php
-$TOKEN_API_URL = "https://kapi.kakao.com/v1/user/logout";
+$TOKEN_API_URL = "https://kapi.kakao.com/v1/user/unlink";
 
 $header = array('Authorization: Bearer ' . $_SESSION['access_token']);
 $opts = array(
@@ -21,5 +21,5 @@ $return_data = json_decode($return_data, true);
 
 unset($_SESSION['userid']);
 
-echo("<script>location.href = 'http://localhost:8080/Capstone-PHP/index.php'</script>");
+echo("<script>location.href = 'http://localhost:8080/Capstone-PHP/index2.php'</script>");
 ?>
