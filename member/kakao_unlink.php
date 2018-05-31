@@ -20,6 +20,7 @@ curl_close($curl_session);
 $return_data = json_decode($return_data, true);
 
 unset($_SESSION['userid']);
+unset($_SESSION['access_token']);
 
-echo("<script>location.href = 'http://localhost:8080/Capstone-PHP/index.php'</script>");
+echo("<script>location.href = 'http://localhost/Capstone-PHP'</script>");
 ?>

@@ -5,7 +5,7 @@ if (!isset($_SESSION)) {
 }
 
 $CLIENT_ID = "e446f350fd40cd40dd67806ea7fc02a5";
-$REDIRECT_URI = "http://localhost:8080/Capstone-PHP/member/kakao_login.php";
+$REDIRECT_URI = "http://localhost/Capstone-PHP/member/kakao_login.php";
 $TOKEN_API_URL = "https://kauth.kakao.com/oauth/token";
 
 $code = $_GET["code"];
@@ -57,7 +57,7 @@ $kakao_thumbnail_image = $return_data['properties']['thumbnail_image'];
 $_SESSION['userid'] = $kakao_id . $kakao_nickname;
 $_SESSION['access_token'] = $access_token;
 
-echo("<script>location.href = 'http://localhost:8080/Capstone-PHP/index.php'</script>");
+echo("<script>location.href = 'http://localhost/Capstone-PHP'</script>");
 
 ?>
 

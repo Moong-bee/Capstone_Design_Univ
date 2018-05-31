@@ -35,31 +35,17 @@ $Client_id = "e446f350fd40cd40dd67806ea7fc02a5";
         <a onclick="closeRightMenu()" href="#" class="w3-bar-item w3-button"><i class="fa fa-arrow-right"></i></a>
         <a href="" class="w3-bar-item w3-button"><i class="fa fa-home"></i></a>
         <a href="#" class="w3-bar-item w3-button"><i class="fa fa-search"></i></a>
-        <a href="#" class="w3-bar-item w3-button"><i class="fa fa-envelope"></i></a>
-        <a href="./maptest.php" class="w3-bar-item w3-button"><i class="fa fa-globe"></i></a>
+
         <?
         if (!isset($_SESSION['userid']))
         {
-            echo("<a class='w3-bar-item w3-button' href='https://kauth.kakao.com/oauth/authorize?client_id=".$Client_id."&redirect_uri=http://localhost:8080/Capstone-PHP/member/kakao_login.php&response_type=code'>
-                        <i class='glyphicon glyphicon-log-in'></i>
-                   </a>");
+            echo("
+                        <a class='w3-bar-item w3-button' href='https://kauth.kakao.com/oauth/authorize?client_id=".$Client_id."&redirect_uri=http://localhost/Capstone-PHP/member/kakao_login.php&response_type=code'>
+                <i class='glyphicon glyphicon-log-in'></i>
+            </a>");
         }
         else {
-            echo("<a class='w3-bar-item w3-button' href='./member/kakao_logout.php'>
-                        <i class='glyphicon glyphicon-log-out'></i>
-                   </a>
-                   
-                   <a class='w3-bar-item w3-button w3-bottom' onclick='unlink()'>
-                        <i class='glyphicon glyphicon-remove-sign'></i>
-                   </a>
-                   <script type='text/javascript'>
-                   function unlink() {
-                     if(confirm('앱을 완전히 탈퇴하시겠습니까?')){
-                         location.href = 'member/kakao_unlink.php';
-                     }
-                   }
-                   </script>
-                   ");
+            echo(");
         }
 
         ?>
