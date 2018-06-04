@@ -21,5 +21,5 @@ $return_data = json_decode($return_data, true);
 
 unset($_SESSION['userid']);
 
-echo("<script>location.href = 'http://localhost/Capstone-PHP'</script>");
+echo("<script>location.href = 'http://".$_SESSION['test_url']."/Capstone-PHP/index.php'</script>");
 ?>
